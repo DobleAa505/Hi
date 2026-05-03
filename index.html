@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Hillary 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  background: radial-gradient(circle at center, #fbeee6, #e9cfc1);
+  font-family:'Playfair Display', serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* HEADER */
+.header{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  animation: fadeDown 1.5s ease;
+}
+
+.header img{
+  width:130px;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* TEXTO DEL HEADER */
+.header-text{
+  margin-top:8px;
+  font-family:'Great Vibes', cursive;
+  font-size:26px;
+  color:#b68b4c;
+  letter-spacing:1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* SOBRE */
+.envelope{
+  width:320px;
+  height:220px;
+  background:#fff;
+  position:relative;
+  cursor:pointer;
+  border-radius:10px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:transform 0.6s ease;
+}
+
+.envelope.open{
+  transform:scale(0.8) translateY(-100px);
+  opacity:0;
+}
+
+.flap{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#f1d2b3;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform-origin: top;
+  transition: transform 0.8s ease;
+}
+
+.envelope.open .flap{
+  transform: rotateX(180deg);
+}
+
+.envelope span{
+  position:absolute;
+  bottom:15px;
+  font-size:16px;
+}
+
+/* CARTA */
+.letter{
+  position:absolute;
+  width:90%;
+  max-width:700px;
+  height:80vh;
+  background:#fffdf9;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.4);
+  overflow-y:auto;
+  display:none;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+/* TEXTO */
+.letter h1{
+  font-family:'Great Vibes', cursive;
+  font-size:38px;
+  text-align:center;
+  margin-bottom:20px;
+  color:#b68b4c;
+}
+
+.letter p{
+  line-height:1.9;
+  font-size:17px;
+  color:#3b2f2f;
+}
+
+/* FOTO FINAL */
+.photo{
+  width:100%;
+  border-radius:15px;
+  margin-top:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* CONFETI FLOTANTE */
+.confetti{
+  position:absolute;
+  font-size:20px;
+  animation:floatUp 2s ease forwards;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0) scale(1); opacity:1;}
+  100%{transform:translateY(-120px) scale(1.5); opacity:0;}
+}
+
+/* CORAZONES */
+.heart{
+  position:absolute;
+  color:#ff6b81;
+  font-size:18px;
+  animation:rise 6s linear infinite;
+}
+
+@keyframes rise{
+  0%{transform:translateY(100vh); opacity:0;}
+  20%{opacity:1;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* ANIMACIONES */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .letter{
+    height:85vh;
+    padding:20px;
+  }
+
+  .letter h1{
+    font-size:30px;
+  }
+
+  .letter p{
+    font-size:16px;
+  }
+}
+/* HEADER */
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translate(-50%, -20px);
+  }
+  to{
+    opacity:1;
+    transform:translate(-50%, 0);
+  }
+}
+
+@media(max-width:600px){
+  .header img{
+    width:60px;
+  }
+
+  .header-text{
+    font-size:15px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" autoplay loop>
+  <source src="Pensandolo-Bien.mp3" type="audio/mpeg">
+</audio>
+
+<div class="header">
+  <img src="Hillary-painted.jpeg" alt="Hillary">
+  <div class="header-text">
+    Para Hillary — mi lugar favorito en el mundo
+  </div>
+</div>
+
+<div class="envelope" onclick="openLetter()">
+  <div class="flap"></div>
+  <span>Dame un toquesito😉</span>
+</div>
+
+<div class="letter" id="letter">
+
+<h1>Feliz Cumpleaños mi princesa🎂</h1>
+
+<p>
+Mi amorcito<br><br>
+
+Hoy es un día demasiado especial, y aunque me encantaría estar contigo,
+quiero que sientas todo lo que llevo dentro de mi corazón mientras lees esto.<br><br>
+
+Mi cielo, lamento no estar ahí en tu cumpleaños…<br>
+y también lamento haberte mandado las flores un día antes,<br>
+pero la florería no abría los domingos, así que me tocó improvisar jaja<br><br>
+
+Pero todo fue con un propósito… sorprenderte jejeje.<br>
+Y gracias a Milena, que sacó de su tiempo para ayudarme a recibirlas.<br><br>
+
+Ay Ay Ay cuantos son ya?<br>
+
+Ya son 19 años de vida linda…<br>
+casi entrando en esa segunda década jajajaja<br><br>
+
+Disfruta, mi cielo.<br>
+Que Dios te guíe siempre en tu camino.<br>
+Recuerda que cada persona tiene su tiempo…<br>
+no todos vamos a la misma velocidad...<br>
+Sino al plan que Dios tiene para cada uno.<br>
+
+Sigue siendo como eres…<br>
+y si cambias, que sea siempre para mejor.<br>
+Para ti… como persona… y con esa dulzura tan hermosa que tienes en tu corazón.<br><br>
+
+Yo estoy aquí para ti… siempre.<br>
+Siempre, siempre.<br><br>
+
+Vamos a seguir creciendo juntos…<br>
+porque esto apenas empieza.<br>
+Con Dios en nuestros planes, todo es posible.<br><br>
+
+Y como tú me escribiste una vez…<br><br>
+
+Yo también quiero estar en cada uno de tus cumpleaños…<br>
+no importa si tienes 102 años.<br>
+Y si no estoy… mi espíritu igual te va a acompañar.<br><br>
+
+Te amo más que nada.<br>
+Te amo infinitamente.<br><br>
+
+Feliz cumpleaños princesa mía!<br>
+Que todo lo que te propongas se haga realidad…<br>
+Y que seas feliz por el resto de tu vida❤️
+</p>
+
+
+<img src="Hillary-birthday.jpeg" class="photo">
+
+</div>
+
+<script>
+const letter = document.getElementById("letter");
+const music = document.getElementById("music");
+const envelope = document.querySelector(".envelope");
+
+function openLetter(){
+  envelope.classList.add("open");
+
+  setTimeout(()=>{
+    envelope.style.display="none";
+    letter.style.display="block";
+  },800);
+
+  music.volume = 0.4;
+  music.play().catch(()=>{});
+}
+
+/* CONFETI (3 flotando) */
+document.addEventListener("click", (e)=>{
+  for(let i=0;i<3;i++){
+    let c = document.createElement("div");
+    c.innerText = ["🎉","✨","❤️"][Math.floor(Math.random()*3)];
+    c.classList.add("confetti");
+
+    c.style.left = (e.clientX + Math.random()*30-15) + "px";
+    c.style.top = (e.clientY + Math.random()*30-15) + "px";
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),2000);
+  }
+});
+
+/* CORAZONES AUTOMÁTICOS */
+setInterval(()=>{
+  let heart = document.createElement("div");
+  heart.innerText = "❤️";
+  heart.classList.add("heart");
+
+  heart.style.left = Math.random()*100 + "vw";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),6000);
+},800);
+</script>
+
+</body>
+</html>
